@@ -34,14 +34,14 @@ QuestionRouter.get("/:questionId", (req, res, next) => {
     // Addition: Change to findOne and include the search criteria for users
     Question.findOne({_id: req.params.questionId, user: req.user._id}, (err, question) => {
         if (err) {
-            res.status(500);
-            return next (err);
-        };
+            res.status(500)
+            return next (err)
+        }
         if (!question) {
-            res.status(404);
+            res.status(404)
             return next (new Error("No question found"))
         }
-        return res.send(question);
+        return res.send(question)
     })
 })
 
@@ -64,12 +64,12 @@ questionRouter.put("/:questionId", (req, res, next) => {
 })
 
 // Addition: Change to findOneAndRemove and include the search criteria for users
-    Question.findOneAndRemove({_id: req.params.questionId, user: req.user._id}, (err, question) => {
-        if (err) {
-            res.status(500)
-            return next(err)
-        }
-        return res.send(question)
-    })
+Question.findOneAndRemove({_id: req.params.questionId, user: req.user._id}, (err, question) => {
+    if (err) {
+        res.status(500)
+        return next(err)
+    }
+    return res.send(question)
+})
 
 module.exports = questionRouter

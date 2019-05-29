@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 const bcrypt = require("bcrypt")
-
+// needss a .user and 
 const questionSchema = new Schema ({
     title: {
         type: String,
@@ -11,18 +11,15 @@ const questionSchema = new Schema ({
         type: String,
         required: false
     },
-    upVote: {
-        type: Number,
-        required: false
-    },
-    downVote: {
-        type: Number,
-        required: false
-    },
+    
     type: {
         type: String,
         required: false
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
     }
 })
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("User", questionSchema);
