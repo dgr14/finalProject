@@ -38,10 +38,10 @@ export class AppContextProvider extends Component {
         return questionAxios.put(`/api/questions/${questionId}`, question)
             .then(response => {
                 this.setState(prevState => {
-                    const updatedExpenses = prevState.expenses.map(expense => {
-                        return expense._id === response.data._id ? response.data : expense
+                    const updatedQuestions = prevState.questions.map(question => {
+                        return question._id === response.data._id ? response.data : question
                     })
-                    reutrn { questions: updatedQuestions}
+                    return { questions: updatedQuestions}
                 })
             })
     }
