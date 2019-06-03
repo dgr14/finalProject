@@ -19,6 +19,14 @@ class LoginForm extends Component {
         })
     }
 
+    clearInputs = () => {
+        this.setState({
+            username: "",
+            password: "",
+            errorMessage: ""
+        })
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.login(this.state)

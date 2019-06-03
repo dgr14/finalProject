@@ -1,13 +1,14 @@
 import React from 'react';
 import {Route, Switch, Link, Redirect } from "react-router-dom"
 
+
 function App(props) {
   return (
     <div>
-      <Switch>
+      {/* <Switch>
         <Route exact path={"/"} render={() => !props.token ? <Auth /> : <Redirect to = "/questions/entry" />} />
         <Route path="/expenses" render={rprops => props.token? <MainView /> : <Redirect to = "/" />} />
-      </Switch>
+      </Switch> */}
     </div>
   )
 }

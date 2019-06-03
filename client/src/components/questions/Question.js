@@ -17,7 +17,7 @@ class Question extends Component {
                 <div>
                     <h1>{fullName}</h1>
                     <h5>Username: {username}</h5>
-                    <h5>Question:</h5>
+                    <p>Question:</p>
             <p>Response: {/* I need to figure out how to reference the response data here */}</p>
                 </div>
             )
