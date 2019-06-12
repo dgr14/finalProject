@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 const bcrypt = require("bcrypt")
 // needss a .user and 
 const questionSchema = new Schema ({
-    title: {
+    question: {
         type: String,
         required: false
     },

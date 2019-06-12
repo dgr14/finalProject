@@ -14,60 +14,55 @@ export class AppContextProvider extends Component {
     constructor() {
         super()
         this.state = {
-            questions: [],
             user: JSON.parse(localStorage.getItem("user")) || {},
             token: localStorage.getItem("token") || ""
         }
     }
 
-    componentDidMount() {
-        this.getQuestions();
-    }
+    // getQuestions = () => {
+    //     return questionAxios.get("/api/questions")
+    //     .then(response => {
+    //         this.setState(prevState => {
+    //             return { questions: [...prevState.questions, response.data] }
+    //         })
+    //         return response;
+    //     })
+    // }
 
-    getQuestions = () => {
-        return questionAxios.get("/api/questions")
-        .then(response => {
-            this.setState(prevState => {
-                return { questions: [...prevState.questions, response.data] }
-            })
-            return response;
-        })
-    }
+    // addQuestion = (newQuestion) => {
+    //     return questionAxios.post("/api/questions/", newQuestion)
+    //         .then(response => {
+    //             this.setState(prevState => {
+    //                 return { question: [...prevState.questions, response.data] }
+    //             });
+    //             return response;
+    //         })
+    // }
 
-    addQuestion = (newQuestion) => {
-        return questionAxios.post("/api/questions/", newQuestion)
-            .then(response => {
-                this.setState(prevState => {
-                    return { question: [...prevState.questions, response.data] }
-                });
-                return response;
-            })
-    }
+    // editQuestions = (questionsId, question) => {
+    //     return questionAxios.put(`/api/questions/${questionsId}`, question)
+    //         .then(response => {
+    //             this.setState(prevState => {
+    //                 const updatedQuestions = prevState.questions.map(question => {
+    //                     return question._id === response.data._id ? response.data : question
+    //                 })
+    //                 return { questions: updatedQuestions}
+    //             })
+    //         })
+    // }
 
-    editQuestions = (questionsId, question) => {
-        return questionAxios.put(`/api/questions/${questionsId}`, question)
-            .then(response => {
-                this.setState(prevState => {
-                    const updatedQuestions = prevState.questions.map(question => {
-                        return question._id === response.data._id ? response.data : question
-                    })
-                    return { questions: updatedQuestions}
-                })
-            })
-    }
-
-    deleteQuestions = (questionId) => {
-        return questionAxios.delete(`/api/questions/${questionId}`)
-            .then(response => {
-                this.setState(prevState => {
-                    const updatedQuestions = prevState.questions.filter(question => {
-                        return question._id !== questionId
-                    })
-                    return { questions: updatedQuestions }
-                })
-                return response;
-            })
-    }
+    // deleteQuestions = (questionId) => {
+    //     return questionAxios.delete(`/api/questions/${questionId}`)
+    //         .then(response => {
+    //             this.setState(prevState => {
+    //                 const updatedQuestions = prevState.questions.filter(question => {
+    //                     return question._id !== questionId
+    //                 })
+    //                 return { questions: updatedQuestions }
+    //             })
+    //             return response;
+    //         })
+    // }
 
     // *** Do I need to include both a signup and login? ***
 
@@ -114,10 +109,6 @@ export class AppContextProvider extends Component {
         return(
             <AppContext.Provider
                 value={{
-                    getQuestions: this.getQuestions,
-                    addQuestions: this.addQuestions,
-                    editQuestions: this.editQuestions,
-                    deleteQuestions: this.deleteQuestions,
                     signup: this.signup,
                     login: this.login,
                     logout: this.logout,

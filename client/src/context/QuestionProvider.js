@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 const { Consumer, Provider } = React.createContext();
+const questionAxios = axios.create();
+
+questionAxios.interceptors.request.use((config) => {
+    const token = localStorage.getItem("token");
+    config.headers.Authorization = `Bearer ${token}`
+    return config;
+})
 
 class QuestionProvider extends Component {
     constructor(){
@@ -11,7 +18,7 @@ class QuestionProvider extends Component {
     }
 
     getQuestions = () => {
-        axios.get("/questions")
+        questionAxios.get("/api/questions")
             .then(res => {
                 this.setState({ questions: res.data })
             })
@@ -19,7 +26,8 @@ class QuestionProvider extends Component {
     }
 
     createQuestion = newQuestion => {
-        axios.post("/questions")
+        console.log(newQuestion)
+        questionAxios.post("/api/questions", newQuestion)
             .then(res => {
                 this.setState({ questions: [res.data, ...this.state.questions] })
                 this.getQuestions()
@@ -28,7 +36,7 @@ class QuestionProvider extends Component {
     }
 
     removeOldQuestion = _id => {
-        axios.put("/question/", {living: false})
+        questionAxios.put("/api/questions/", {living: false})
             .then(res => {
                 console.log(res)
             })
@@ -44,7 +52,7 @@ class QuestionProvider extends Component {
                 getQuestions: this.getQuestions,
                 createQuestion: this.createQuestion
             }}>
-
+            {this.props.children}
             </Provider>
         )
     }

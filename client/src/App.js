@@ -11,12 +11,11 @@ function App(props) {
     <div>
       <Switch>
         <Route exact path={"/"} render={() => !props.token ? <Auth /> : <Redirect to = "/questions" />} />
-        <Route path="/questions" render={rprops => props.token? <View /> : <Redirect to = "/" />} />
-        <Route path= "/questions/:_id" render={rprops => props.token? <Question /> : <Redirect to ="/" /> } />
+        <Route path="/questions" render={rprops => props.token ? <View /> : <Redirect to = "/" />} />
+        <Route path= "/questions/:_id" render={rprops => props.token ? <Question /> : <Redirect to ="/" /> } />
       </Switch>
     </div>
   )
 }
 
-// export default withContext(App);
 export default withContext(App)
