@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import axios from "axios";
 const questionAxios = axios.create();
 
@@ -34,7 +34,7 @@ export class AppContextProvider extends Component {
         })
     }
 
-    addQuestions = (newQueston) => {
+    addQuestion = (newQuestion) => {
         return questionAxios.post("/api/questions/", newQuestion)
             .then(response => {
                 this.setState(prevState => {
@@ -44,8 +44,8 @@ export class AppContextProvider extends Component {
             })
     }
 
-    editQuestions = (questionsID, question) => {
-        return questionAxios.put(`/api/questions/${questionId}`, question)
+    editQuestions = (questionsId, question) => {
+        return questionAxios.put(`/api/questions/${questionsId}`, question)
             .then(response => {
                 this.setState(prevState => {
                     const updatedQuestions = prevState.questions.map(question => {
@@ -72,7 +72,7 @@ export class AppContextProvider extends Component {
     // *** Do I need to include both a signup and login? ***
 
     signup = (userInfo) => {
-        return questionAxios.post("/auth/signup", userInfo)
+        return axios.post("/auth/signup", userInfo)
             .then(response => {
                 const { user, token } = response.data
                 localStorage.setItem("token", token)
@@ -86,7 +86,7 @@ export class AppContextProvider extends Component {
     }
 
     login = (credentials) => {
-        return expenseAxios.post("/auth/login", credentials)
+        return axios.post("/auth/login", credentials)
             .then(response => {
                 const { token, user } = response.data
                 localStorage.setItem("token", token)

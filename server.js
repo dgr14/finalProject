@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, "client", "build")))
 
 
 // Connect to mongoDB
-mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/expenses",
+mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/questions",
     { useNewUrlParser: true, useCreateIndex: true },
     (err) => {
         if (err) throw err;
@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/expenses",
 // Routes - Endpoints
 app.use("/api", expressJwt({ secret: process.env.SECRET }))
 app.use("/auth", require('./routes/authRouter'))
-app.use("/api/questions"), require('./routes/questionRouter')
+app.use(("/api/questions"), require('./routes/questionRouter'))
 
 // Global Server Error Handler - handles ANY thrown error from ANY of our routes above
 app.use((err, req, res, next) => {

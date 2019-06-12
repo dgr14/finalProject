@@ -24,5 +24,11 @@ const responseSchema = new Schema ({
         type: Number,
         required: false
     },
-
+    timeStamp: {
+        type: Date,
+        required: true,
+        default: Date.now()
+    }
 })
+
+module.exports = mongoose.model("Response", responseSchema);

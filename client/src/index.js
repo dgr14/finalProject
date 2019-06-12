@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { BrowserRouter } from "react-router-dom"
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { AppContextProvider } from './AppContext';
+import './style.css'
+import { QuestionProvider } from './context/QuestionProvider'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+//  Need to import Router component
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+        <BrowserRouter>
+                <AppContextProvider>
+                        <QuestionProvider>
+                                <App />
+                        </QuestionProvider>
+                </AppContextProvider>
+        </BrowserRouter>,
+        document.getElementById('root')
+);

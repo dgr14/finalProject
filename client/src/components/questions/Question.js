@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 
+
+
 class Question extends Component {
     constructor(props){
     super(props)
@@ -9,6 +11,11 @@ class Question extends Component {
             username: this.props.username,
             // what do i reference for the question itself?
         }
+    }
+
+    componentDidMount(){
+        // find the question in the array of questions within context that matches this id
+        // this.props.match.params._id
     }
 
     render(){
@@ -23,3 +30,5 @@ class Question extends Component {
             )
     }
 }
+
+export default Question

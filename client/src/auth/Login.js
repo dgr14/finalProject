@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withContext } from "../AppContext";
-import Styles from "./Login.module.css"
+import Styles from './Login.module.css'
 
 class LoginForm extends Component {
     constructor(){
@@ -29,8 +29,8 @@ class LoginForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.login(this.state)
-            .then(() => this.props.history.push("/expenses/entry"))
+        this.props.login({username: this.state.username, password: this.state.password})
+            .then(() => this.props.history.push("/questions"))
             .catch(err => {
                 // is this where I put the error message?
             })
@@ -39,8 +39,8 @@ class LoginForm extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <h3>Log In</h3>
+                <form className={Styles.loginForm} onSubmit={this.handleSubmit}>
+                    <h3 className={Styles.loginHeader}>Log In</h3>
                     <div>
                         <input 
                             onChange ={this.handleChange}

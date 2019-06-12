@@ -19,7 +19,13 @@ const questionSchema = new Schema ({
     user: {
         type: Schema.Types.ObjectId,
         ref: "User"
-    }
+    },
+    responses: [
+        {type: Schema.Types.ObjectId,
+        ref: "Response" }
+    ]
+        
+    
 })
 
-module.exports = mongoose.model("User", questionSchema);
+module.exports = mongoose.model("Question", questionSchema);
