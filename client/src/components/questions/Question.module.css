@@ -9,7 +9,9 @@
     border-radius: 10px;
     text-decoration: none;
     color: black;
+    /* min-height: 200px; */
 }
 .questionLinks:hover{
     text-decoration: underline;
+    color: red;
 }

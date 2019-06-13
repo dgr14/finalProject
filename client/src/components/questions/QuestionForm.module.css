@@ -1,7 +1,7 @@
 .questionTextArea{
     width: 75em;
     height: 15em;
-
+    border-radius: 10px;
     margin-top: 20px;   
 }
 .questionTextButton{

@@ -12,8 +12,9 @@ class Response extends Component {
         return(
             <div>
                 <div>
-                    <h1>{fullName}</h1>
-                    <h5>{userName}</h5>
+                    {/* <h1>{fullName}</h1>
+                    <h5>{userName}</h5> */}
+                    <h1>Response Filler</h1>
                     {/* need to feed the response text to the paragraph below */}
                     <p>{Response}</p>
                 </div>
@@ -21,3 +22,5 @@ class Response extends Component {
         )
     }
 }
+
+export default Response

@@ -38,24 +38,26 @@ class LoginForm extends Component {
 
     render() {
         return (
-            <div>
+            <div className={Styles.formWrapper}>
                 <form className={Styles.loginForm} onSubmit={this.handleSubmit}>
                     <h3 className={Styles.loginHeader}>Log In</h3>
-                    <div>
+                    <div className={Styles.loginInputContainer}>
                         <input 
                             onChange ={this.handleChange}
                             value={this.state.username}
                             name="username"
                             type="text"
-                            placeholder="username"/>
+                            placeholder="username"
+                            className= {Styles.username} />
                         <input 
                             onChange={this.handleChange}
                             value={this.state.password}
                             name="password"
                             type="password"
-                            placeholder="password" />
+                            placeholder="password" 
+                            className={Styles.password} />
                     </div>
-                    <button type="submit">Submit</button>
+                    <button className={Styles.loginSubmit} type="submit">Submit</button>
                 </form>
                 {
                     this.state.errorMessage &&

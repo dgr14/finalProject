@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { withContext } from "../AppContext"
 import Styles from './Signup.module.css'
 
-
 class Signup extends Component {
     constructor() {
         super(); 
@@ -41,22 +40,26 @@ class Signup extends Component {
 
     render(){
         return(
-            <div>
+            <div className={Styles.formWrapper}>
                 <form className={Styles.signupForm} onSubmit={this.handleSubmit}>
-                    <h3>Sign Up</h3>
-                    <input 
-                        onChange={this.handleChange}
-                        value={this.state.username}
-                        name="username"
-                        type="text"
-                        placeholder="Username"/>
-                    <input 
-                        onChange = {this.handleChange}
-                        value={this.state.password}
-                        name="password"
-                        type="password"
-                        placeholder="Password"/>
-                    <button type="submit">Create Account</button>
+                    <h3 className={Styles.signupHeader}>Sign Up</h3>
+                    <div className={Styles.signupInputContainer}>
+                        <input 
+                            onChange={this.handleChange}
+                            value={this.state.username}
+                            name="username"
+                            type="text"
+                            placeholder="Username" 
+                            className={Styles.username}/>
+                        <input 
+                            onChange = {this.handleChange}
+                            value={this.state.password}
+                            name="password"
+                            type="password"
+                            placeholder="Password" 
+                            className={Styles.password} />
+                    </div>
+                    <button className={Styles.signupSubmit} type="submit">Create Account</button>
                 </form>
 
                 {/* {
