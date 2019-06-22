@@ -1,16 +1,19 @@
 .questionTextArea{
-    width: 75em;
-    height: 15em;
+    
     border-radius: 10px;
     margin-top: 20px;   
 }
 .questionTextButton{
-    height: 2em;
-    width: 4em;
-    border-radius: .25px;
+    width: 8em;
+    height: 4em;
+    border-radius: 10px;
     margin-top: 2em;
+    background-color: ivory;
 }
+
 .questionForm{
+    height: 15em;
+    width: 65em;
     display: flex;
     flex-direction: column;
     align-items: flex-end;

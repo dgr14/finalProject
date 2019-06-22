@@ -29,6 +29,38 @@ questionRouter.post("/", (req, res, next) => {
     })
 })
 
+questionRouter.put("/response/:_id",(req, res, next) => {
+    Question.findOneAndUpdate(
+        {_id: req.params._id, },
+        // adding to array inside data
+        {$push: {responses: req.body.response}},
+        {new: true}, (error, updatedQuestion) => {
+            if(error) {
+                res.status(500)
+                return next(error)
+            }
+            return res.status(201).send(updatedQuestion)
+        }
+
+    )
+})
+
+questionRouter.put('/upvote/:_id', (req, res, next) => {
+    Question.findOneAndUpdate(
+        {_id: req.params._id, },
+        // adding to array inside data
+        {$inc: {upVote: 1}},
+        {new: true}, (error, updatedQuestion) => {
+            if(error) {
+                res.status(500)
+                return next(error)
+            }
+            return res.status(201).send(updatedQuestion)
+        }
+
+    )
+})
+
 questionRouter.get("/:questionId", (req, res, next) => {
         
     // Addition: Change to findOne and include the search criteria for users

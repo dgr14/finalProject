@@ -1,17 +1,82 @@
+
 .questionText{
+    
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
 }
 .questionDiv{
-    height: 10em;
+    height: 6em;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: ivory;
+    outline: 2px solid black;
+    border-radius: 10px;
 }
-.responseDiv{
 
+.questionForm{
+    width: 75em;
+    height: 15em;
 }
 .questionHeaderText{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin: 2em;
+    padding: 1em;
     font-size: 2em;
+    display: inline-block;
+    background-color: pink;
+    text-align: left;
+    /* outline: 2px solid black; */
+}
+.responseTextArea{
+    height: 163px;
+    width: 825px;
+    margin-top: 1em;
+    border-radius: 10px;
+}
+.wholeResponseDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30em;
+    background-color: aquamarine
+}
+.responseHeaderText{
+    text-align: center;
+    width: 825px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 3em;
+    font-weight: bold;
+}
+.replyButton{
+    width: 10em;
+    height: 3em;
+    border-radius: 10px;
+    margin-top: 1em;
+    background-color: ivory;
+    font-weight: bold;
+}
+.listItem{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 0.5em;
+    text-align: left;
+    font-weight: lighter;
+    background-color: ivory;
+    border-radius: 10px;
+    /* outline: 2px solid black; */
+    margin: 0.5em 0px;
+
+}
+.responseH3Text{
+    text-align: left;
+    padding: 3em;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: aquamarine;
+
+
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }

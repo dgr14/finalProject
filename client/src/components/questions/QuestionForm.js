@@ -6,7 +6,9 @@ function QuestionForm(props) {
     const { handleChange, createQuestion, inputs, handleSubmit } = props
     return (
             <form className={Styles.questionForm} onSubmit={handleSubmit}>
-                <textarea className={Styles.questionTextArea} name="question"
+                <textarea className={Styles.questionTextArea} 
+                            placeholder="Ask Away!"
+                            name="question"
                             value = {inputs.question}
                             onChange = {handleChange}
                             submit = {createQuestion} 

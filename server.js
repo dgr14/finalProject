@@ -26,6 +26,7 @@ mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/questions",
 app.use("/api", expressJwt({ secret: process.env.SECRET }))
 app.use("/auth", require('./routes/authRouter'))
 app.use(("/api/questions"), require('./routes/questionRouter'))
+// is this how you route data for the individual questions?
 
 // Global Server Error Handler - handles ANY thrown error from ANY of our routes above
 app.use((err, req, res, next) => {

@@ -1,26 +1,40 @@
 import React, { Component } from 'react'
+import { withQuestions } from '../../context/QuestionProvider'
+import Styles from './Response.module.css'
+
 
 class Response extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
+            upVote:0,
+            downVote:0,
+            show: true
 
-        }
+        };
     }
 
+    
+    ToggleClick = () => {
+        this.setState({ show: !this.setState.show })
+    }
+  
+
+
     render(){
+        // console.log(this.props)
         return(
-            <div>
-                <div>
-                    {/* <h1>{fullName}</h1>
-                    <h5>{userName}</h5> */}
-                    <h1>Response Filler</h1>
-                    {/* need to feed the response text to the paragraph below */}
-                    <p>{Response}</p>
-                </div>
+            <div className={Styles.listItem}>
+                {this.props.response}
+                {/* tie the button to the props.upVote and props.downVote
+                        look at $ methods */}
+                    {/* Do I have to feed  */}
+                <button className={Styles.voteButton} onClick={() => this.props.upVoter(this.props.questionID)}> Up Vote </button>
+                <button className={Styles.voteButton} onClick={() => this.downVoter}> Down Vote </button>
             </div>
-        )
+        )  
     }
 }
 
-export default Response
+
+export default withQuestions(Response)

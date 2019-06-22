@@ -7,4 +7,9 @@
 }
 .logoutButton{
     margin: 10px;
+    width: 8em;
+    height: 3em;
+    border-radius: 10px;
+    margin-right: 6em;
+    background-color: ivory;
 }

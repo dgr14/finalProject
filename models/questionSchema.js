@@ -11,7 +11,6 @@ const questionSchema = new Schema ({
         type: String,
         required: false
     },
-    
     type: {
         type: String,
         required: false
@@ -20,10 +19,12 @@ const questionSchema = new Schema ({
         type: Schema.Types.ObjectId,
         ref: "User"
     },
-    responses: [
-        {type: Schema.Types.ObjectId,
-        ref: "Response" }
-    ]
+    // Add user to response after MVP complete
+    responses: [String],
+    upVote: {
+        type: Number,
+        default: 0
+    }
         
     
 })

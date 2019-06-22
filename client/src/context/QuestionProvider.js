@@ -17,6 +17,14 @@ class QuestionProvider extends Component {
         }
     }
 
+    upVoting = () => {
+        // this.setState({ UpVoting: this.state.UpVoting ++ })
+    }
+
+    downVoting = () => {
+        // this.setState({ DownVoting: this.state.DownVoting -- })
+    }
+
     getQuestions = () => {
         questionAxios.get("/api/questions")
             .then(res => {
@@ -35,6 +43,23 @@ class QuestionProvider extends Component {
             .catch(err => console.log(err.response.data.errMsg))
     }
 
+    addResponse = (newResponse, _id) => {
+        questionAxios.put(`/api/questions/response/${_id}`, newResponse)
+            .then(response => {
+                this.setState(prevState => ({
+                    questions: prevState.questions.map(question => question._id === _id ? response.data : question)
+                }))
+            })
+    }
+    upVoter = (_id) => {
+        questionAxios.put(`/api/questions/upvote/${_id}`)
+            .then(response => {
+                this.setState(prevState => ({
+                    questions: prevState.questions.map(question => question._id === _id ? response.data : question)
+                }))
+            })
+    }
+
     removeOldQuestion = _id => {
         questionAxios.put("/api/questions/", {living: false})
             .then(res => {
@@ -50,7 +75,9 @@ class QuestionProvider extends Component {
                 ...this.state,
                 removeOldQuestion: this.removeOldQuestion,
                 getQuestions: this.getQuestions,
-                createQuestion: this.createQuestion
+                createQuestion: this.createQuestion,
+                addResponse: this.addResponse,
+                upVoter: this.upVoter
             }}>
             {this.props.children}
             </Provider>

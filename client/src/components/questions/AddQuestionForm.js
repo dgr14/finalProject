@@ -28,7 +28,6 @@ class AddQuestionForm extends Component {
         return(
             <div>
                 {/* figure out a way to include user info above the input question */}
-
                 <Form
                     submit={inputs => this.props.createQuestion(inputs)}
                     inputs={{question: ""}}
@@ -42,12 +41,11 @@ class AddQuestionForm extends Component {
                     <h3 className={Styles.currentQuestionsHeader}>Current Questions:</h3>
                         <div className={Styles.mappedQuestions}>
                             {/* When mapped most recent question needs to appear 1st */}
-                        {/* Use a .sort() function to reverse the order of the strings */}
-                            {this.props.questions.map(question => <Question {...question} /> )}
                             {/* Map out all questions, but the outermost element of each question must be a <Link to={`/question/${question._id}`}></Link */}
+                            {/* Use a .sort() function to reverse the order of the strings */}
+                            {this.props.questions.map(question => <Question {...question} /> )}
                         </div>
                 </div>
-
             </div>
         )
     }
