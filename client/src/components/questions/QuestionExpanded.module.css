@@ -5,15 +5,14 @@
     
 }
 .questionDiv{
-    height: 6em;
+    /* height: 6em; */
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: ivory;
     outline: 2px solid black;
     border-radius: 10px;
 }
-
 .questionForm{
     width: 75em;
     height: 15em;
@@ -30,7 +29,7 @@
 .responseTextArea{
     height: 163px;
     width: 825px;
-    margin-top: 1em;
+    /* margin-top: 3em; */
     border-radius: 10px;
 }
 .wholeResponseDiv{
@@ -47,6 +46,9 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 3em;
     font-weight: bold;
+    overflow-y: scroll;
+    height: 5em;
+    padding-bottom: 1em;
 }
 .replyButton{
     width: 10em;
@@ -65,18 +67,25 @@
     border-radius: 10px;
     /* outline: 2px solid black; */
     margin: 0.5em 0px;
-
 }
 .responseH3Text{
     text-align: left;
-    padding: 3em;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: aquamarine;
-
+    display: block;
+    margin-right: 2em;
 
 }
 form{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+}
+.responseForm{
+    /* margin-bottom: 3em; */
+}
+.topHalf{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

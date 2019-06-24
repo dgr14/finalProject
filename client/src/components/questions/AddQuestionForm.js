@@ -37,7 +37,7 @@ class AddQuestionForm extends Component {
                         } {...this.state} />
                     } />
                 
-                <div className={Styles.responseDiv}>
+                <div className={Styles.questionDisplayDiv}>
                     <h3 className={Styles.currentQuestionsHeader}>Current Questions:</h3>
                         <div className={Styles.mappedQuestions}>
                             {/* When mapped most recent question needs to appear 1st */}

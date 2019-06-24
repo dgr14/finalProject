@@ -41,28 +41,28 @@ class QuestionExpanded extends Component {
 
     render(){
         return (
-            <div>
+            <div className={Styles.expandedView}>
                 <div className={Styles.questionDiv}>
                 <h4 className={Styles.questionHeaderText}>Question:</h4>
                     <h2 className={Styles.questionText}>{this.state.question}</h2>
                     {/* Need to figure out how to add responses */}
                 </div>
-                    <h3 className={Styles.responseH3Text}>Enter a Response:</h3>
                 <div className={Styles.wholeResponseDiv}>
-                    <form className={Styles.form} onSubmit={this.handleSubmit}>
-                        <textarea
-                        className={Styles.responseTextArea}
-                        placeholder="Tell us what you think"
-                        name={'response'}
-                        onChange={this.handleChange}
-                        value={this.state.response}/>
-                        <button className={Styles.replyButton}>Reply</button>
-                    </form>
+                    <div className={Styles.topHalf}>
+                        <h3 className={Styles.responseH3Text}>Enter a Response:</h3>
+                        <form className={Styles.responseForm} onSubmit={this.handleSubmit}>
+                            <textarea
+                            className={Styles.responseTextArea}
+                            placeholder="Tell us what you think"
+                            name={'response'}
+                            onChange={this.handleChange}
+                            value={this.state.response}/>
+                            <button className={Styles.replyButton}>Reply</button>
+                        </form>
+                    </div>
                     <div className={Styles.responseDiv}>
-                    {/* Unordered List not working */}
                         <ul className={Styles.responseHeaderText}>Responses:
-                           
-                            {this.state.responses.map(response => <Response response={response} questionID={this.state._id} /> )}
+                            {this.state.responses.map(response => <li className={Styles.responseLi}><Response response={response} questionID={this.state._id} /> </li>)}
                             {/* Need to figure out how to use $inc to incriment */}
                             {/* Also need to build my response component to handle upVoting */}
                         </ul>

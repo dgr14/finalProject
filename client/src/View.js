@@ -5,6 +5,8 @@ import Footer from './Footer.js'
 import Header from './Header.js'
 import AddQuestionForm from './components/questions/AddQuestionForm'
 
+// I need to add function to my view so that I can refresh the page everytime it loads. Otherwise none of the users questions display upon loading the page
+
 function View(props) {
     return (
         <div className={Styles.viewReturnDiv}>
@@ -14,11 +16,6 @@ function View(props) {
                     <h3 className={Styles.questionEntryHeader}>Question Entry:</h3>
                     <AddQuestionForm />
                 </div>
-
-                <div>
-                    {/* this is where I want the questions to be displayed */}
-                </div>
-
             </div>   
             <Footer />
         </div>

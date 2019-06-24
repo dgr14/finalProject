@@ -1,3 +1,20 @@
 .listItem{
-    
+    font-size: 0.5em;
+    font-weight: lighter;
+    text-align: left;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    outline: 2px solid black;
+    margin: 0.5em 0px;
+}
+.upVoteButton, .downVoteButton{
+    height: 3em;
+    width: 6em;
+    border-radius: 10px;
+}
+.buttonContainer{
+    display: flex;
+    /* flex-direction: column; */
 }

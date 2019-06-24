@@ -1,7 +1,6 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 const bcrypt = require("bcrypt")
-// needss a .user and 
 const questionSchema = new Schema ({
     question: {
         type: String,
@@ -24,9 +23,7 @@ const questionSchema = new Schema ({
     upVote: {
         type: Number,
         default: 0
-    }
-        
-    
+    }    
 })
 
 module.exports = mongoose.model("Question", questionSchema);

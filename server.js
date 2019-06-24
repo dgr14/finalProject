@@ -6,11 +6,13 @@ const morgan = require("morgan")
 const mongoose = require("mongoose")
 const PORT = process.env.PORT || 7000
 const path = require("path")
+const secret = process.env.SECRET || "some secret passphrase here for local development"
 
 // Middlewares for every request
 app.use(express.json()) // req.body = Object from POST and PUT requests
 app.use(morgan('dev'))
 app.use(express.static(path.join(__dirname, "client", "build")))
+
 
 
 // Connect to mongoDB
