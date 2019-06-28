@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, "client", "build")))
 
 
 // Connect to mongoDB
-mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/questions",
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/questions",
     { useNewUrlParser: true, useCreateIndex: true },
     (err) => {
         if (err) throw err;

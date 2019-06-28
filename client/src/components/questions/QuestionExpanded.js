@@ -38,6 +38,17 @@ class QuestionExpanded extends Component {
         e.preventDefault()
         this.props.addResponse({response: this.state.response}, this.state._id)
     }
+    incrementUp = () => {
+        this.setState({
+            upVote: this.state.upVote + 1
+        })
+    }
+    incrementDown = () => {
+        this.setState({
+            // is this how I would handle the logic or should I store the -1 in the downVote and reference this.state.downVote to create an overallVote?
+            downVote: this.state.upVote - 1
+        })
+    }
 
     render(){
         return (
