@@ -5,6 +5,7 @@
     height: 205px;
     background-color: gainsboro;
     padding-bottom: 1em;
+    padding-right: 10px;
 }
 .currentQuestionsHeader{
     border-bottom: 2em;

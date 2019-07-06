@@ -59,8 +59,8 @@ class QuestionExpanded extends Component {
                     {/* Need to figure out how to add responses */}
                 </div>
                 <div className={Styles.wholeResponseDiv}>
-                    <div className={Styles.topHalf}>
                         <h3 className={Styles.responseH3Text}>Enter a Response:</h3>
+                    <div className={Styles.topHalf}>
                         <form className={Styles.responseForm} onSubmit={this.handleSubmit}>
                             <textarea
                             className={Styles.responseTextArea}
