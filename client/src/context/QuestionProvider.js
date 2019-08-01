@@ -37,8 +37,9 @@ class QuestionProvider extends Component {
         console.log(newQuestion)
         questionAxios.post("/api/questions", newQuestion)
             .then(res => {
-                this.setState({ questions: [res.data, ...this.state.questions] })
-                this.getQuestions()
+                console.log(res.data)
+                this.setState(prevState => ({ questions: [ ...prevState.questions, res.data] }), () => console.log(this.state.questions))
+                //this.getQuestions()
             })
             .catch(err => console.log(err.response.data.errMsg))
     }

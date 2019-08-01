@@ -33,6 +33,7 @@ authRouter.post("/signup", (req, res, next) => {
 })
 
 authRouter.post("/login", (req, res, next) => {
+    console.log("testing")
 
     // Try to find the user with the submitted username (lowercased)
     User.findOne({username: req.body.username.toLowerCase()}, (err, user) => {

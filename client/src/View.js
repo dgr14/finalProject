@@ -4,6 +4,7 @@ import { withContext } from './AppContext'
 import Footer from './Footer.js'
 import Header from './Header.js'
 import AddQuestionForm from './components/questions/AddQuestionForm'
+import { withQuestions } from './context/QuestionProvider'
 
 // I need to add function to my view so that I can refresh the page everytime it loads. Otherwise none of the users questions display upon loading the page
 

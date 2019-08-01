@@ -17,6 +17,7 @@ class AddQuestionForm extends Component {
 
     componentDidMount() {
         this.props.getQuestions()
+        console.log(`hello world`)
         // console.log(this.props)
     }
     
@@ -24,7 +25,7 @@ class AddQuestionForm extends Component {
 
     // const { title, content, type, user } = props
     render(){
-        // console.log(this.props)
+        console.log( "props", this.props)
         return(
             <div>
                 {/* figure out a way to include user info above the input question */}
@@ -43,7 +44,7 @@ class AddQuestionForm extends Component {
                             {/* When mapped most recent question needs to appear 1st */}
                             {/* Map out all questions, but the outermost element of each question must be a <Link to={`/question/${question._id}`}></Link */}
                             {/* Use a .sort() function to reverse the order of the strings */}
-                            {this.props.questions.map(question => <Question {...question} /> )}
+                            {this.props.questions.map(question => <Question {...question} /> ).reverse()}
                         </div>
                 </div>
             </div>

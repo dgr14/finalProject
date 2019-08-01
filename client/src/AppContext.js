@@ -99,7 +99,6 @@ export class AppContextProvider extends Component {
         localStorage.removeItem("user");
         localStorage.removeItem("token")
         this.setState({
-            questions: [],
             user: {},
             token: ""
         })
