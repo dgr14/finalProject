@@ -2,6 +2,7 @@ const express = require('express')
 const questionRouter = express.Router()
 const Question = require('../models/questionSchema.js')
 
+// GET ALL
 questionRouter.get("/", (req, res, next) => {
     // Addition: include filtering criteria to the find so that it only finds todo items with a 'user' property with the current user's id.
     Question.find((err, questions) => {

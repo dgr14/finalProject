@@ -62,9 +62,12 @@ class QuestionProvider extends Component {
     }
 
     removeOldQuestion = _id => {
-        questionAxios.put("/api/questions/", {living: false})
+        questionAxios.delete(`/api/questions/${_id}`, {living: false})
             .then(res => {
                 console.log(res)
+                // set state then filter over prevstate.questions and return question if question._id !== to _id
+                this.setState
+                // make sure to provide functtion to
             })
             .catch(err => console.log(err.response.data.errMsg))
     }
