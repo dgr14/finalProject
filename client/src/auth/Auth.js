@@ -8,7 +8,7 @@ import Styles from './Auth.module.css'
 
 function Auth() {
     return (
-        <div>
+        <div className={Styles.authView}>
             <h1 className={Styles.authHeader}>Advice-App</h1>
                 <Login />
                 <Signup />

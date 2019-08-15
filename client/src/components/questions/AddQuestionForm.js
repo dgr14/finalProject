@@ -43,7 +43,7 @@ class AddQuestionForm extends Component {
                         <div className={Styles.mappedQuestions}>
                             {/* When mapped most recent question needs to appear 1st */}
                             {/* Map out all questions, but the outermost element of each question must be a <Link to={`/question/${question._id}`}></Link */}
-                            {/* Use a .sort() function to reverse the order of the strings */}
+                            {/* I used .reverse() to reverse the order the questions displayed so new questions were on top */}
                             {this.props.questions.map(question => <Question {...question} /> ).reverse()}
                         </div>
                 </div>

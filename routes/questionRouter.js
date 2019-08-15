@@ -98,13 +98,12 @@ questionRouter.put("/:questionId", (req, res, next) => {
 
 // Addition: Change to findOneAndRemove and include the search criteria for users
 questionRouter.delete("/:questionId", (req, res, next) => {
-    
-    Question.findOneAndRemove({_id: req.params.questionId, user: req.user._id}, (err, question) => {
+    Question.findOneAndRemove({_id: req.params.questionId, user: req.user._id}, (err, deletedQuestion) => {
         if (err) {
             res.status(500)
             return next(err)
         }
-        return res.send(question)
+        return res.status(202).send({question: deletedQuestion, msg: `Successfully deleted the question`})
     })
 })
 

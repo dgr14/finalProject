@@ -3,9 +3,10 @@
     /* height: auto; */
     overflow-y: scroll;
     height: 205px;
-    background-color: gainsboro;
+    background-color: whitesmoke;
     padding-bottom: 1em;
     padding-right: 10px;
+    border-radius: 15px;
 }
 .currentQuestionsHeader{
     border-bottom: 2em;

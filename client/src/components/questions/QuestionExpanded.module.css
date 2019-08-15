@@ -10,7 +10,7 @@
     grid-template-columns: 1fr 3fr 1fr;
     /* justify-content: space-between; */
     align-items: center;
-    background-color: ivory;
+    background-color: #CDE7F0;
     outline: 2px solid black;
     border-radius: 10px;
 }
@@ -23,7 +23,7 @@
     padding: 1em;
     font-size: 2em;
     display: inline;
-    background-color: pink;
+    background-color: lightskyblue;
     text-align: left;
     /* outline: 2px solid black; */
 }
@@ -39,7 +39,7 @@
     justify-content: center;
     align-items: center;
     height: fill;
-    background-color: aquamarine
+    background-color: lightskyblue;
 }
 .responseHeaderText{
     text-align: center;
@@ -50,6 +50,7 @@
     overflow-y: scroll;
     height: 5em;
     padding-bottom: 1em;
+    background-color: lightskyblue;
 }
 .replyButton{
     width: 10em;
@@ -70,20 +71,18 @@
     margin: 0.5em 0px;
 }
 .responseH3Text{
-    text-align: left;
+    text-align: center;
+    font-size: 3em;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: aquamarine;
+    background-color: lightskyblue;
     display: block;
-    margin-right: 2em;
+    padding-bottom: .25em;
 
 }
 form{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-}
-.responseForm{
-    /* margin-bottom: 3em; */
 }
 .topHalf{
     display: flex;

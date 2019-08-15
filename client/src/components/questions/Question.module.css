@@ -11,11 +11,8 @@
     color: black;
     /* min-height: 200px; */
 }
-.questionVote{
-
-}
 .questionLinks:hover{
     text-decoration: underline;
-    color: lightcoral;
-    background-color: ivory;
+    color: royalblue;
+    background-color: #CDE7F0;
 }

@@ -73,7 +73,7 @@ class QuestionExpanded extends Component {
                     </div>
                     <div className={Styles.responseDiv}>
                         <ul className={Styles.responseHeaderText}>Responses:
-                            {this.state.responses.map(response => <li className={Styles.responseLi}><Response response={response} questionID={this.state._id} /> </li>)}
+                            {this.state.responses.map(response => <li className={Styles.responseLi}><Response response={response} questionID={this.state._id} /> </li>).reverse()}
                             {/* Need to figure out how to use $inc to incriment */}
                             {/* Also need to build my response component to handle upVoting */}
                         </ul>
