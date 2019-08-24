@@ -14,7 +14,6 @@ app.use(morgan('dev'))
 app.use(express.static(path.join(__dirname, "client", "build")))
 
 
-
 // Connect to mongoDB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/questions",
     { useNewUrlParser: true, useCreateIndex: true },
@@ -46,6 +45,8 @@ app.get("*", (req, res) => {
 app.listen(PORT, () => {
     console.log(`Starting server on port ${PORT}`)
 })
+
+// WHY IS THIS ALL COMMENTED OUT?!?!
 
 // app.use("/auth", require("./routes/authRouter"));
 // //Make the app use the express-jwt authentication middleware on anything starting with "/api"

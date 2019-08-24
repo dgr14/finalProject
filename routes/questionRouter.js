@@ -22,7 +22,7 @@ questionRouter.post("/", (req, res, next) => {
 
     // Same as before
     question.save((err, newQuestion) => {
-        if(err) {
+        if (err) {
             res.status(500)
             return next(err)
         }
@@ -42,7 +42,6 @@ questionRouter.put("/response/:_id",(req, res, next) => {
             }
             return res.status(201).send(updatedQuestion)
         }
-
     )
 })
 

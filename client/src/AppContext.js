@@ -51,20 +51,18 @@ export class AppContextProvider extends Component {
     //         })
     // }
 
-    // deleteQuestions = (questionId) => {
-    //     return questionAxios.delete(`/api/questions/${questionId}`)
-    //         .then(response => {
-    //             this.setState(prevState => {
-    //                 const updatedQuestions = prevState.questions.filter(question => {
-    //                     return question._id !== questionId
-    //                 })
-    //                 return { questions: updatedQuestions }
-    //             })
-    //             return response;
-    //         })
-    // }
-
-    // *** Do I need to include both a signup and login? ***
+    deleteQuestions = (questionId) => {
+        return questionAxios.delete(`/api/questions/${questionId}`)
+            .then(response => {
+                this.setState(prevState => {
+                    const updatedQuestions = prevState.questions.filter(question => {
+                        return question._id !== questionId
+                    })
+                    return { questions: updatedQuestions }
+                })
+                return response;
+            })
+    }
 
     signup = (userInfo) => {
         return axios.post("/auth/signup", userInfo)
@@ -132,7 +130,7 @@ export const withContext = Component => {
                             <Component
                                 {...globalState}
                                 {...props}
-                             />
+                            />
                         )
                     }
                 }

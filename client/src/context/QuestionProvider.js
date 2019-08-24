@@ -67,7 +67,7 @@ class QuestionProvider extends Component {
                 console.log(res)
                 // set state then filter over prevstate.questions and return question if question._id !== to _id
             
-                // make sure to provide functtion to
+                // make sure to provide function to
             })
             .catch(err => console.log(err.response.data.errMsg))
     }
@@ -91,7 +91,7 @@ class QuestionProvider extends Component {
 
 export const withQuestions = C => props => (
     <Consumer>
-        {value => <C {...value} {...props}/>}
+        {value => <C {...value} {...props} />}
     </Consumer>
 )
 
